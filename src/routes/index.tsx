@@ -5,6 +5,8 @@ import { Countdown } from "@/components/Countdown";
 import { RsvpForm } from "@/components/RsvpForm";
 import { createFileRoute } from "@tanstack/react-router";
 import coupleAsset from "@/assets/couple.png.asset.json";
+import badgeAsset from "@/assets/ornate-badge.png.asset.json";
+import { MapPin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -175,6 +177,37 @@ function Home() {
             <p className="mt-8 text-center text-sm italic text-muted-foreground">
               An intentional celebration — no end times will be shared.
             </p>
+          </section>
+
+          {/* LOCATION */}
+          <section className="mx-auto max-w-4xl px-6 py-24">
+            <SectionHeading eyebrow="The Venue" title="Where We Gather" />
+            <div className="relative mx-auto flex aspect-[4/5] w-full max-w-md items-center justify-center sm:max-w-lg">
+              <img
+                src={badgeAsset.url}
+                alt="Ornate venue badge"
+                className="absolute inset-0 h-full w-full object-contain"
+              />
+              <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-16 text-center">
+                <p className="text-[0.65rem] tracking-[0.5em] uppercase text-gold">Location</p>
+                <div className="gold-line mx-auto my-4 w-16" />
+                <p className="script text-4xl md:text-5xl text-wax leading-tight">
+                  Golden Conifer
+                </p>
+                <p className="mt-3 font-serif text-base md:text-lg italic text-foreground/75">
+                  Functions Venue
+                </p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Golden+Conifer+Functions+Venue"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex items-center gap-2 border border-gold bg-background/60 px-5 py-2.5 text-[0.65rem] tracking-[0.35em] uppercase text-foreground transition-colors hover:bg-gold hover:text-ivory"
+                >
+                  <MapPin className="h-3.5 w-3.5" />
+                  Open in Maps
+                </a>
+              </div>
+            </div>
           </section>
 
           {/* DRESS CODE */}
