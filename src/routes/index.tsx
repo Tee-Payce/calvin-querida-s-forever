@@ -198,7 +198,7 @@ function Home() {
                   Functions Venue
                 </p>
                 <a
-                  href="https://www.bing.com/maps?q=Golden+Conifer+Functions+Venue"
+                  href="https://www.google.com/maps/search/?api=1&query=Golden+Conifer+Functions+Venue"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 inline-flex items-center gap-2 border border-gold bg-background/60 px-5 py-2.5 text-[0.65rem] tracking-[0.35em] uppercase text-foreground transition-colors hover:bg-gold hover:text-ivory"
