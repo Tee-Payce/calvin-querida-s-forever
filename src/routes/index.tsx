@@ -5,6 +5,8 @@ import { Countdown } from "@/components/Countdown";
 import { RsvpForm } from "@/components/RsvpForm";
 import { createFileRoute } from "@tanstack/react-router";
 import coupleAsset from "@/assets/couple.png.asset.json";
+import badgeAsset from "@/assets/ornate-badge.png.asset.json";
+import { MapPin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
