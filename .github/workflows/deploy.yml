@@ -11,7 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-# Only one deployment at a time; cancel any in-progress run on new push
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -32,27 +31,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (static prerender)
-        env:
-          GITHUB_PAGES: "true"
-        run: npm run build
+      # Swap the SSR root for the SPA-compatible root
+      - name: Use SPA root route
+        run: cp src/routes/__root.spa.tsx src/routes/__root.tsx
 
-      - name: Locate output directory
-        id: locate
-        run: |
-          # TanStack Start / Nitro writes to .output/public for static builds
-          if [ -d ".output/public" ]; then
-            echo "dir=.output/public" >> "$GITHUB_OUTPUT"
-          elif [ -d "dist" ]; then
-            echo "dir=dist" >> "$GITHUB_OUTPUT"
-          else
-            echo "Could not find build output" && exit 1
-          fi
+      - name: Build SPA
+        run: npx vite build --config vite.spa.config.ts
+
+      # GitHub Pages needs a 404.html that redirects to index.html for hash routing
+      - name: Copy index.html to 404.html
+        run: cp dist/index.html dist/404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.locate.outputs.dir }}
+          path: dist
 
   deploy:
     needs: build

@@ -6,22 +6,8 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-const isGHPages = process.env.GITHUB_PAGES === "true";
-
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
-    ...(isGHPages && {
-      prerender: {
-        enabled: true,
-        routes: ["/"],
-        autoSubfolderIndex: false,
-      },
-    }),
   },
-  ...(isGHPages && {
-    vite: {
-      base: "/calvin-querida-s-forever/",
-    },
-  }),
 });
