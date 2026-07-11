@@ -8,6 +8,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import coupleAsset from "@/assets/couple.png";
 import dressCode from "@/assets/dress-code.png";
 import flowersAsset from "@/assets/flowers.png";
+import photobookAsset from "@/assets/wedding-photos.png"
 import badgeAsset from "@/assets/Ornate venue badge.png";
 import { MapPin } from "lucide-react";
 import {
@@ -253,16 +254,7 @@ function Home() {
           {/* SCHEDULE */}
           <section className="mx-auto max-w-4xl px-6 py-24">
 
-            {/* Flowers background behind heading */}
-            <div className="relative">
-              <img
-                src={flowersAsset}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-cover object-center opacity-20 pointer-events-none select-none"
-              />
-              <SectionHeading eyebrow="6 · Feb · 2027" title="Schedule of the Day" />
-            </div>
+            <SectionHeading eyebrow="6 · Feb · 2027" title="Schedule of the Day" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {[
                 { time: "10:00", label: "Ceremony" },
@@ -284,6 +276,15 @@ function Home() {
             <p className="mt-8 text-center text-sm italic text-muted-foreground">
               An intentional celebration — no end times will be shared.
             </p>
+
+            {/* Flowers image */}
+            <div className="mt-10 flex justify-center">
+              <img
+                src={flowersAsset}
+                alt="Floral decoration"
+                className="w-full max-w-md object-contain"
+              />
+            </div>
           </section>
 
           {/* LOCATION */}
@@ -366,6 +367,14 @@ function Home() {
               We would be delighted to capture memories with our loved ones. Further details will
               be shared on the day.
             </p>
+             {/* photobook image */}
+            <div className="mt-10 flex justify-center">
+              <img
+                src={photobookAsset}
+                alt="Photo Book"
+                className="w-full max-w-md object-contain"
+              />
+            </div>
           </section>
 
           {/* RSVP */}
