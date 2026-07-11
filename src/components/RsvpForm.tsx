@@ -73,7 +73,7 @@ export function RsvpForm() {
               onClick={() => setAttendance(v)}
               className={`flex-1 border px-4 py-3 text-sm tracking-[0.25em] uppercase transition ${
                 attendance === v
-                  ? "border-gold bg-gold/10 text-foreground"
+                  ? "border-gold bg-gold/10 text-foreground border-radius-3"
                   : "border-border text-muted-foreground hover:border-gold/60"
               }`}
             >

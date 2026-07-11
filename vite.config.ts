@@ -6,10 +6,22 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const isGHPages = process.env.GITHUB_PAGES === "true";
+
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
+    ...(isGHPages && {
+      prerender: {
+        enabled: true,
+        routes: ["/"],
+        autoSubfolderIndex: false,
+      },
+    }),
   },
+  ...(isGHPages && {
+    vite: {
+      base: "/calvin-querida-s-forever/",
+    },
+  }),
 });
