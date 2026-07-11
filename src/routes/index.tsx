@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import { Envelope } from "@/components/Envelope";
 import { Countdown } from "@/components/Countdown";
 import { RsvpForm } from "@/components/RsvpForm";
 import { createFileRoute } from "@tanstack/react-router";
-import coupleAsset from "@/assets/couple.png.asset.json";
-import badgeAsset from "@/assets/ornate-badge.png.asset.json";
+import coupleAsset from "@/assets/couple.png";
+import dressCode from "@/assets/dress-code.png";
+import flowersAsset from "@/assets/flowers.png";
+import badgeAsset from "@/assets/Ornate venue badge.png";
 import { MapPin } from "lucide-react";
 import {
   Accordion,
@@ -32,16 +35,28 @@ function SectionHeading({ eyebrow, title }: { eyebrow?: string; title: string })
 }
 
 function Home() {
-  const [entered, setEntered] = useState(false);
+  const [phase, setPhase] = useState<"loading" | "envelope" | "site">("loading");
 
   return (
     <>
       <Toaster position="top-center" />
+
+      {/* Phase 1 — loading screen */}
       <AnimatePresence>
-        {!entered && <Envelope onOpen={() => setEntered(true)} />}
+        {phase === "loading" && (
+          <LoadingScreen onComplete={() => setPhase("envelope")} />
+        )}
       </AnimatePresence>
 
-      {entered && (
+      {/* Phase 2 — envelope invitation */}
+      <AnimatePresence>
+        {phase === "envelope" && (
+          <Envelope onOpen={() => setPhase("site")} />
+        )}
+      </AnimatePresence>
+
+      {/* Phase 3 — main site */}
+      {phase === "site" && (
         <motion.main
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +68,7 @@ function Home() {
             {/* background couple photo with overlay */}
             <div className="absolute inset-0">
               <img
-                src={coupleAsset.url}
+                src={coupleAsset}
                 alt="Calvin and Querida"
                 className="h-full w-full object-cover object-center"
               />
@@ -71,6 +86,88 @@ function Home() {
                     "radial-gradient(ellipse at center, transparent 40%, oklch(0.72 0.09 78 / 0.12) 100%)",
                 }}
               />
+            </div>
+
+            {/* Gold floral illustration — corner roses + vines */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{ zIndex: 2, opacity: 0.18 }}
+              viewBox="0 0 1440 900"
+              preserveAspectRatio="xMidYMid slice"
+            >
+              {[
+                { cx: 160,  cy: 160,  r: 110 },
+                { cx: 1280, cy: 130,  r: 95  },
+                { cx: 80,   cy: 780,  r: 85  },
+                { cx: 1370, cy: 760,  r: 100 },
+                { cx: 720,  cy: 40,   r: 70  },
+              ].map((c, i) => (
+                <g key={i}>
+                  {[0, 45, 90, 135, 180, 225, 270, 315].map((a, j) => {
+                    const rad = (a * Math.PI) / 180;
+                    const px = c.cx + Math.cos(rad) * c.r * 0.5;
+                    const py = c.cy + Math.sin(rad) * c.r * 0.5;
+                    return (
+                      <ellipse
+                        key={j}
+                        cx={px} cy={py}
+                        rx={c.r * 0.35} ry={c.r * 0.55}
+                        transform={`rotate(${a + 90}, ${px}, ${py})`}
+                        fill="var(--gold)"
+                        opacity="0.55"
+                      />
+                    );
+                  })}
+                  <circle cx={c.cx} cy={c.cy} r={c.r * 0.14} fill="var(--gold-soft)" opacity="0.9" />
+                </g>
+              ))}
+              {/* Vine stems */}
+              <path d="M0 900 Q200 600 400 400 T800 100"  stroke="var(--gold)" strokeWidth="1.5" fill="none" opacity="0.35" />
+              <path d="M1440 900 Q1200 600 1000 400 T600 100" stroke="var(--gold)" strokeWidth="1.5" fill="none" opacity="0.35" />
+            </svg>
+
+            {/* Falling gold petals */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 3 }}>
+              {Array.from({ length: 18 }).map((_, i) => {
+                const left    = `${5 + (i * 5.5) % 90}%`;
+                const delay   = i * 0.7;
+                const dur     = 8 + (i % 5) * 2;
+                const opacity = 0.4 + (i % 4) * 0.15;
+                return (
+                  <motion.div
+                    key={i}
+                    className="absolute"
+                    style={{ left, top: "-30px" }}
+                    animate={{
+                      y: ["0vh", "110vh"],
+                      x: [0, i % 2 === 0 ? 40 : -40],
+                      rotate: [0, 360 * (i % 2 === 0 ? 1 : -1)],
+                      opacity: [0, opacity, opacity, 0],
+                    }}
+                    transition={{
+                      duration: dur,
+                      delay,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    <svg width="16" height="22" viewBox="0 0 16 22" fill="none">
+                      <path
+                        d="M8 1 C12 1 14 7 14 12 C14 18 11 21 8 21 C5 21 2 18 2 12 C2 7 4 1 8 1Z"
+                        fill="var(--gold)"
+                        fillOpacity="0.55"
+                      />
+                      <path
+                        d="M8 3 C8 3 8 17 8 21"
+                        stroke="var(--gold-soft)"
+                        strokeWidth="0.5"
+                        strokeOpacity="0.6"
+                        fill="none"
+                      />
+                    </svg>
+                  </motion.div>
+                );
+              })}
             </div>
 
             <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center px-6 py-24 text-center text-ivory">
@@ -155,7 +252,17 @@ function Home() {
 
           {/* SCHEDULE */}
           <section className="mx-auto max-w-4xl px-6 py-24">
-            <SectionHeading eyebrow="6 · Feb · 2027" title="Schedule of the Day" />
+
+            {/* Flowers background behind heading */}
+            <div className="relative">
+              <img
+                src={flowersAsset}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full object-cover object-center opacity-20 pointer-events-none select-none"
+              />
+              <SectionHeading eyebrow="6 · Feb · 2027" title="Schedule of the Day" />
+            </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {[
                 { time: "10:00", label: "Ceremony" },
@@ -184,7 +291,7 @@ function Home() {
             <SectionHeading eyebrow="The Venue" title="Where We Gather" />
             <div className="relative mx-auto flex aspect-[4/5] w-full max-w-md items-center justify-center sm:max-w-lg">
               <img
-                src={badgeAsset.url}
+                src={badgeAsset}
                 alt="Ornate venue badge"
                 className="absolute inset-0 h-full w-full object-contain"
               />
@@ -226,6 +333,27 @@ function Home() {
                   <p className="mt-3 font-serif text-lg text-foreground/85">
                     A tuxedo or formal suit paired with a tie or bow tie.
                   </p>
+                </div>
+              </div>
+
+              {/* Dress code illustration */}
+              <div className="mt-12 flex justify-center">
+                <div className="relative w-full max-w-lg">
+                  {/* White floor — starts at 50% from top, rounded bottom edges */}
+                  <div
+                    className="absolute left-0 right-0 bottom-0 rounded-b-3xl"
+                    style={{ top: "50%" }}
+                  />
+                  {/* White panel with rounded corners, sits behind the image */}
+                  <div
+                    className="absolute inset-x-4 bottom-0 rounded-3xl bg-white"
+                    style={{ top: "50%" }}
+                  />
+                  <img
+                    src={dressCode}
+                    alt="Dress code illustration"
+                    className="relative w-full object-contain"
+                  />
                 </div>
               </div>
             </div>

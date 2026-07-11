@@ -9,32 +9,37 @@ function useCountdown() {
     return () => clearInterval(id);
   }, []);
   const diff = Math.max(0, TARGET - now);
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff / 3600000) % 24);
-  const minutes = Math.floor((diff / 60000) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  return { days, hours, minutes, seconds };
+  return {
+    days:    Math.floor(diff / 86400000),
+    hours:   Math.floor((diff / 3600000) % 24),
+    minutes: Math.floor((diff / 60000) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
 }
 
 export function Countdown() {
   const { days, hours, minutes, seconds } = useCountdown();
   const items = [
-    { label: "Days", value: days },
-    { label: "Hours", value: hours },
-    { label: "Minutes", value: minutes },
-    { label: "Seconds", value: seconds },
+    { label: "Days",    value: days },
+    { label: "Hours",   value: hours },
+    { label: "Mins",    value: minutes },
+    { label: "Secs",    value: seconds },
   ];
+
   return (
-    <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+    /* Always 4 equal columns — no wrapping, no min-width that can overflow */
+    <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-8 w-full max-w-lg mx-auto">
       {items.map((it) => (
         <div
           key={it.label}
-          className="flex min-w-[80px] flex-col items-center border border-gold/40 bg-ivory/50 px-4 py-5 md:min-w-[110px] md:px-6 md:py-6 backdrop-blur-sm"
+          className="flex flex-col items-center border border-gold/40 bg-ivory/50 backdrop-blur-sm py-4 sm:py-5 md:py-6"
         >
-          <span className="font-display text-4xl md:text-6xl text-foreground tabular-nums">
+          <span className="font-display tabular-nums text-foreground leading-none
+                           text-3xl sm:text-4xl md:text-6xl">
             {String(it.value).padStart(2, "0")}
           </span>
-          <span className="mt-2 text-[0.65rem] md:text-xs tracking-[0.3em] uppercase text-muted-foreground">
+          <span className="mt-2 tracking-[0.25em] sm:tracking-[0.3em] uppercase text-muted-foreground
+                           text-[0.55rem] sm:text-[0.65rem] md:text-xs">
             {it.label}
           </span>
         </div>
