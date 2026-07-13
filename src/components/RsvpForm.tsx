@@ -71,7 +71,7 @@ export function RsvpForm() {
               type="button"
               key={v}
               onClick={() => setAttendance(v)}
-              className={`flex-1 border px-4 py-3 text-sm tracking-[0.25em] uppercase transition ${
+              className={`flex-1 border border-radius-3  px-4 py-3 text-sm tracking-[0.25em] uppercase transition ${
                 attendance === v
                   ? "border-gold bg-gold/10 text-foreground border-radius-3"
                   : "border-border text-muted-foreground hover:border-gold/60"
