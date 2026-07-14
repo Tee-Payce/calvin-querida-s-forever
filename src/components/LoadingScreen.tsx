@@ -131,7 +131,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
             >
-              <p className="script text-4xl text-gold">Calvin &amp; Querida</p>
+              <p className="italic text-4xl text-gold">Calvin &amp; Querida</p>
               <p
                 className="mt-2 text-[0.65rem] uppercase tracking-[0.35em] text-muted-foreground"
               >

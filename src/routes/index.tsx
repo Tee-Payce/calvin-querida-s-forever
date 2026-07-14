@@ -5,6 +5,7 @@ import { Envelope } from "@/components/Envelope";
 import { Countdown } from "@/components/Countdown";
 import { RsvpForm } from "@/components/RsvpForm";
 import { createFileRoute } from "@tanstack/react-router";
+import lightsAsset from '@/assets/string-lights.png'
 import HomeVideo from "@/assets/HOME.mp4";
 import dressCode from "@/assets/dress-code.png";
 import flowersAsset from "@/assets/flowers.png";
@@ -261,6 +262,13 @@ function Home() {
                 </p>
                 <Countdown />
               </div>
+              <div className="mt-5 flex justify-center">
+              <img
+                src={lightsAsset}
+                alt="Floral decoration"
+                className="w-full  object-contain"
+              />
+            </div>
 
             <SectionHeading eyebrow="6 · Feb · 2027" title="Schedule of the Day" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -286,7 +294,7 @@ function Home() {
             </p>
 
             {/* Flowers image */}
-            <div className="mt-10 flex justify-center">
+            <div className="mt-5 flex justify-center">
               <img
                 src={flowersAsset}
                 alt="Floral decoration"
@@ -332,13 +340,13 @@ function Home() {
               <SectionHeading eyebrow="Attire" title="Formal Elegance" />
               <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                 <div className="border-l border-gold pl-6">
-                  <p className="script text-3xl text-wax">Ladies</p>
+                  <p className="italic text-3xl text-wax">Ladies</p>
                   <p className="mt-3 font-serif text-lg text-foreground/85">
                     Elegant floor-length gowns or sophisticated cocktail dresses.
                   </p>
                 </div>
                 <div className="border-l border-gold pl-6">
-                  <p className="script text-3xl text-wax">Gentlemen</p>
+                  <p className="italic text-3xl text-wax">Gentlemen</p>
                   <p className="mt-3 font-serif text-lg text-foreground/85">
                     A tuxedo or formal suit paired with a tie or bow tie.
                   </p>
