@@ -257,7 +257,7 @@ function Home() {
           {/* SCHEDULE */}
           <section className="mx-auto max-w-4xl px-6 py-24">
              <div className="mt-14 w-full align-center text-center mb-5">
-                <p className="mb-6 text-[0.7rem] tracking-[0.5em] uppercase text-gold-soft">
+                <p className="mb-6 text-[0.7rem] tracking-[0.5em] uppercase text-gold-hard">
                   Counting the days
                 </p>
                 <Countdown />
@@ -286,7 +286,9 @@ function Home() {
                   <p className="text-xs tracking-[0.35em] uppercase text-muted-foreground">
                     {s.label}
                   </p>
+                  
                 </div>
+                    
               ))}
             </div>
             <p className="mt-8 text-center text-sm italic text-muted-foreground">
