@@ -65,8 +65,8 @@ function Home() {
           className="min-h-screen bg-background text-foreground"
         >
           {/* HERO */}
-          <section className="relative min-h-screen w-full overflow-hidden">
-            {/* background couple photo with overlay */}
+          <section className="relative min-h-screen w-full ">
+            {/* background couple photo with overlay overflow-hidden*/}
             <div className="absolute inset-0">
               {/* <img
                 src={coupleAsset}
@@ -81,7 +81,7 @@ function Home() {
                       loop
                       playsInline
                     />
-              <div
+              {/* <div
                 className="absolute inset-0"
                 style={{
                   background:
@@ -94,11 +94,11 @@ function Home() {
                   background:
                     "radial-gradient(ellipse at center, transparent 40%, oklch(0.72 0.09 78 / 0.12) 100%)",
                 }}
-              />
+              /> */}
             </div>
 
             {/* Gold floral illustration — corner roses + vines */}
-            <svg
+            {/* <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               style={{ zIndex: 2, opacity: 0.18 }}
               viewBox="0 0 1440 900"
@@ -130,13 +130,12 @@ function Home() {
                   <circle cx={c.cx} cy={c.cy} r={c.r * 0.14} fill="var(--gold-soft)" opacity="0.9" />
                 </g>
               ))}
-              {/* Vine stems */}
               <path d="M0 900 Q200 600 400 400 T800 100"  stroke="var(--gold)" strokeWidth="1.5" fill="none" opacity="0.35" />
               <path d="M1440 900 Q1200 600 1000 400 T600 100" stroke="var(--gold)" strokeWidth="1.5" fill="none" opacity="0.35" />
-            </svg>
+            </svg> */}
 
             {/* Falling gold petals */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 3 }}>
+            {/* <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 3 }}>
               {Array.from({ length: 18 }).map((_, i) => {
                 const left    = `${5 + (i * 5.5) % 90}%`;
                 const delay   = i * 0.7;
@@ -177,14 +176,15 @@ function Home() {
                   </motion.div>
                 );
               })}
-            </div>
+            </div> */}
 
-            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center px-6 py-24 text-center text-ivory">
+            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-70 pt-32 text-center text-foreground">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
-                className="text-[0.7rem] tracking-[0.5em] uppercase text-gold-soft"
+                className="text-[0.9rem] tracking-[0.5em] uppercase text-gold-soft"
+                style={{color: '#3B3A2E'}}
               >
                 Together with their families
               </motion.p>
@@ -193,10 +193,10 @@ function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1.2 }}
-                className="mt-8 italic text-6xl md:text-8xl text-gold-soft"
-                style={{ lineHeight: 1 }}
+                className="mt-4 italic text-6xl md:text-8xl"
+                style={{ lineHeight: 1, color: "#3B3A2E" }}
               >
-                Calvin <span className="text-ivory">&</span> Querida
+                Calvin <span style={{ color: "#5B6142" }}>&</span> Querida
               </motion.h1>
 
               <motion.div
@@ -210,7 +210,8 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4, duration: 1 }}
-                className="max-w-2xl font-serif text-lg md:text-xl italic text-ivory/85"
+                className="max-w-2xl font-serif text-lg md:text-xl italic"
+                style={{ color: "#4A4A3A", marginTop: 10 }}
               >
                 Our Love Story
               </motion.p>
@@ -219,7 +220,8 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.6, duration: 1 }}
-                className="mt-6 max-w-2xl space-y-4 font-serif text-base md:text-lg text-ivory/80 leading-relaxed"
+                className="mt-6 max-w-2xl space-y-4 font-serif text-base md:text-lg leading-relaxed"
+                style={{ color: "#4A4A3A" }}
               >
                 <p>
                   Many years ago, our paths first crossed, and we quickly grew fond of one another.
@@ -233,7 +235,7 @@ function Home() {
                 </p>
                 <p>
                   With grateful hearts, we invite you to celebrate the beginning of our forever.
-                  Please join us on <span className="text-gold-soft">6th February 2027</span> as we
+                  Please join us on <span style={{ color: "#5B6142" }}>6th February 2027</span> as we
                   say <em>I do</em>, and celebrate this special day with our family and friends.
                 </p>
               </motion.div>
@@ -242,11 +244,12 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="mt-10 italic text-2xl md:text-3xl text-gold-soft"
+                className="mt-10 italic text-2xl md:text-3xl"
+                style={{ color: "#5B6142" }}
               >
                 “He has made everything beautiful in its time.”
               </motion.p>
-              <p className="mt-2 text-[0.7rem] tracking-[0.4em] uppercase text-ivory/60">
+              <p className="mt-2 text-[0.7rem] tracking-[0.4em] uppercase" style={{ color: "#7A7A6A" }}>
                 Ecclesiastes 3:11
               </p>
 
