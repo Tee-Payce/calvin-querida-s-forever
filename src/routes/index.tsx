@@ -330,41 +330,39 @@ function Home() {
           <section className="bg-secondary/40 py-24">
             <div className="mx-auto max-w-4xl px-6">
               <SectionHeading eyebrow="Attire" title="Formal Elegance" />
+              <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+                <div className="border-l border-gold pl-6">
+                  <p className="script text-3xl text-wax">Ladies</p>
+                  <p className="mt-3 font-serif text-lg text-foreground/85">
+                    Elegant floor-length gowns or sophisticated cocktail dresses.
+                  </p>
+                </div>
+                <div className="border-l border-gold pl-6">
+                  <p className="script text-3xl text-wax">Gentlemen</p>
+                  <p className="mt-3 font-serif text-lg text-foreground/85">
+                    A tuxedo or formal suit paired with a tie or bow tie.
+                  </p>
+                </div>
+              </div>
 
-              {/* Illustration + white background container */}
+              {/* Dress code illustration */}
               <div className="mt-12 flex justify-center">
                 <div className="relative w-full max-w-lg">
-
-                  {/* White panel — starts at 50% of the image height, extends
-                      all the way down through the description text below       */}
+                  {/* White floor — starts at 50% from top, rounded bottom edges */}
+                  <div
+                    className="absolute left-0 right-0 bottom-0 rounded-b-3xl"
+                    style={{ top: "50%" }}
+                  />
+                  {/* White panel with rounded corners, sits behind the image */}
                   <div
                     className="absolute inset-x-4 bottom-0 rounded-3xl bg-white"
                     style={{ top: "50%" }}
                   />
-
-                  {/* Illustration image — sits above the white panel */}
                   <img
                     src={dressCode}
                     alt="Dress code illustration"
                     className="relative w-full object-contain"
                   />
-
-                  {/* Ladies & Gentlemen descriptions — inside the white panel */}
-                  <div className="relative mx-4 grid grid-cols-1 gap-8 px-6 pb-8 md:grid-cols-2">
-                    <div className="border-l border-gold pl-6">
-                      <p className="script text-3xl text-wax">Ladies</p>
-                      <p className="mt-3 font-serif text-lg text-foreground/85">
-                        Elegant floor-length gowns or sophisticated cocktail dresses.
-                      </p>
-                    </div>
-                    <div className="border-l border-gold pl-6">
-                      <p className="script text-3xl text-wax">Gentlemen</p>
-                      <p className="mt-3 font-serif text-lg text-foreground/85">
-                        A tuxedo or formal suit paired with a tie or bow tie.
-                      </p>
-                    </div>
-                  </div>
-
                 </div>
               </div>
             </div>
