@@ -32,14 +32,14 @@ export function Countdown() {
       {items.map((it) => (
         <div
           key={it.label}
-          className="flex flex-col items-center border border-gold/40 bg-ivory/50 backdrop-blur-sm py-4 sm:py-5 md:py-6"
+          className="flex flex-col items-center  bg-ivory/50 backdrop-blur-sm py-4 sm:py-5 md:py-6"
         >
-          <span className="font-display tabular-nums text-foreground leading-none
-                           text-3xl sm:text-4xl md:text-6xl">
+          <span className="font-display tabular-nums leading-none text-3xl sm:text-4xl md:text-6xl"
+                style={{ color: "#5B6142" }}>
             {String(it.value).padStart(2, "0")}
           </span>
-          <span className="mt-2 tracking-[0.25em] sm:tracking-[0.3em] uppercase text-muted-foreground
-                           text-[0.55rem] sm:text-[0.65rem] md:text-xs">
+          <span className="mt-2 tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[0.55rem] sm:text-[0.65rem] md:text-xs"
+                style={{ color: "#5B6142" }}>
             {it.label}
           </span>
         </div>

@@ -192,7 +192,7 @@ function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1.2 }}
-                className="mt-8 script text-6xl md:text-8xl text-gold-soft"
+                className="mt-8 italic text-6xl md:text-8xl text-gold-soft"
                 style={{ lineHeight: 1 }}
               >
                 Calvin <span className="text-ivory">&</span> Querida
@@ -241,7 +241,7 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="mt-10 script text-2xl md:text-3xl text-gold-soft"
+                className="mt-10 italic text-2xl md:text-3xl text-gold-soft"
               >
                 “He has made everything beautiful in its time.”
               </motion.p>
@@ -249,17 +249,18 @@ function Home() {
                 Ecclesiastes 3:11
               </p>
 
-              <div className="mt-14 w-full">
-                <p className="mb-6 text-[0.7rem] tracking-[0.5em] uppercase text-gold-soft">
-                  Counting the days
-                </p>
-                <Countdown />
-              </div>
+             
             </div>
           </section>
 
           {/* SCHEDULE */}
           <section className="mx-auto max-w-4xl px-6 py-24">
+             <div className="mt-14 w-full align-center text-center mb-5">
+                <p className="mb-6 text-[0.7rem] tracking-[0.5em] uppercase text-gold-soft">
+                  Counting the days
+                </p>
+                <Countdown />
+              </div>
 
             <SectionHeading eyebrow="6 · Feb · 2027" title="Schedule of the Day" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -329,39 +330,41 @@ function Home() {
           <section className="bg-secondary/40 py-24">
             <div className="mx-auto max-w-4xl px-6">
               <SectionHeading eyebrow="Attire" title="Formal Elegance" />
-              <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-                <div className="border-l border-gold pl-6">
-                  <p className="script text-3xl text-wax">Ladies</p>
-                  <p className="mt-3 font-serif text-lg text-foreground/85">
-                    Elegant floor-length gowns or sophisticated cocktail dresses.
-                  </p>
-                </div>
-                <div className="border-l border-gold pl-6">
-                  <p className="script text-3xl text-wax">Gentlemen</p>
-                  <p className="mt-3 font-serif text-lg text-foreground/85">
-                    A tuxedo or formal suit paired with a tie or bow tie.
-                  </p>
-                </div>
-              </div>
 
-              {/* Dress code illustration */}
+              {/* Illustration + white background container */}
               <div className="mt-12 flex justify-center">
                 <div className="relative w-full max-w-lg">
-                  {/* White floor — starts at 50% from top, rounded bottom edges */}
-                  <div
-                    className="absolute left-0 right-0 bottom-0 rounded-b-3xl"
-                    style={{ top: "50%" }}
-                  />
-                  {/* White panel with rounded corners, sits behind the image */}
+
+                  {/* White panel — starts at 50% of the image height, extends
+                      all the way down through the description text below       */}
                   <div
                     className="absolute inset-x-4 bottom-0 rounded-3xl bg-white"
                     style={{ top: "50%" }}
                   />
+
+                  {/* Illustration image — sits above the white panel */}
                   <img
                     src={dressCode}
                     alt="Dress code illustration"
                     className="relative w-full object-contain"
                   />
+
+                  {/* Ladies & Gentlemen descriptions — inside the white panel */}
+                  <div className="relative mx-4 grid grid-cols-1 gap-8 px-6 pb-8 md:grid-cols-2">
+                    <div className="border-l border-gold pl-6">
+                      <p className="script text-3xl text-wax">Ladies</p>
+                      <p className="mt-3 font-serif text-lg text-foreground/85">
+                        Elegant floor-length gowns or sophisticated cocktail dresses.
+                      </p>
+                    </div>
+                    <div className="border-l border-gold pl-6">
+                      <p className="script text-3xl text-wax">Gentlemen</p>
+                      <p className="mt-3 font-serif text-lg text-foreground/85">
+                        A tuxedo or formal suit paired with a tie or bow tie.
+                      </p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -472,7 +475,7 @@ function Home() {
 
           {/* FOOTER */}
           <footer className="border-t border-border bg-foreground py-16 text-center text-primary-foreground">
-            <p className="script text-5xl text-gold-soft">Calvin & Querida</p>
+            <p className="italic text-5xl text-gold-soft">Calvin & Querida</p>
             <div className="gold-line mx-auto my-5 w-24" />
             <p className="text-xs tracking-[0.5em] uppercase text-primary-foreground/70">
               Six · February · Two Thousand & Twenty-Seven
