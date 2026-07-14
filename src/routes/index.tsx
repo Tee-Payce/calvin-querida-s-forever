@@ -5,7 +5,7 @@ import { Envelope } from "@/components/Envelope";
 import { Countdown } from "@/components/Countdown";
 import { RsvpForm } from "@/components/RsvpForm";
 import { createFileRoute } from "@tanstack/react-router";
-import coupleAsset from "@/assets/couple.png";
+import HomeVideo from "@/assets/HOME.mp4";
 import dressCode from "@/assets/dress-code.png";
 import flowersAsset from "@/assets/flowers.png";
 import photobookAsset from "@/assets/wedding-photos.png"
@@ -34,7 +34,6 @@ function SectionHeading({ eyebrow, title }: { eyebrow?: string; title: string })
     </div>
   );
 }
-
 function Home() {
   const [phase, setPhase] = useState<"loading" | "envelope" | "site">("loading");
 
@@ -68,11 +67,19 @@ function Home() {
           <section className="relative min-h-screen w-full overflow-hidden">
             {/* background couple photo with overlay */}
             <div className="absolute inset-0">
-              <img
+              {/* <img
                 src={coupleAsset}
                 alt="Calvin and Querida"
                 className="h-full w-full object-cover object-center"
-              />
+              /> */}
+               <video
+                      src={HomeVideo}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
               <div
                 className="absolute inset-0"
                 style={{

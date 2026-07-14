@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import envelopeVideo from "@/assets/ENVELOPE3.mp4";
+import envelopeVideo from "@/assets/ENVELOPE4.mp4";
 
 interface EnvelopeProps {
   onOpen: () => void;
@@ -28,7 +28,7 @@ export function Envelope({ onOpen }: EnvelopeProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-black">
+    <div className="fixed inset-0 z-50 overflow-hidden bg-background">
 
       {/* ── Video — always mounted, plays fullscreen behind everything ── */}
       <video
@@ -101,7 +101,7 @@ export function Envelope({ onOpen }: EnvelopeProps) {
         {phase === "fading" && (
           <motion.div
             key="fadeout"
-            className="absolute inset-0 bg-black"
+            className="absolute inset-0 bg-background"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeInOut" }}
