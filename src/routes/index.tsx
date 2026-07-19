@@ -9,6 +9,7 @@ import lightsAsset from '@/assets/string-lights.png'
 import HomeVideo from "@/assets/HOME.mp4";
 import dressCode from "@/assets/dress-code.png";
 import flowersAsset from "@/assets/flowers.png";
+import giftsAsset from '@/assets/envelope5.png'
 import photobookAsset from "@/assets/wedding-photos.png"
 import badgeAsset from "@/assets/Ornate venue badge.png";
 import { MapPin } from "lucide-react";
@@ -183,7 +184,7 @@ function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
-                className="text-[0.9rem] tracking-[0.5em] uppercase text-gold-soft"
+                className="text-[0.9rem] tracking-[0.5em] uppercase font-bold text-gold-soft"
                 style={{color: '#3B3A2E'}}
               >
                 Together with their families
@@ -210,7 +211,7 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4, duration: 1 }}
-                className="max-w-2xl font-serif text-lg md:text-xl italic"
+                className="max-w-2xl font-serif text-lg md:text-xl font-bold italic"
                 style={{ color: "#4A4A3A", marginTop: 10 }}
               >
                 Our Love Story
@@ -220,7 +221,7 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.6, duration: 1 }}
-                className="mt-6 max-w-2xl space-y-4 font-serif text-base md:text-lg leading-relaxed"
+                className="mt-6 max-w-2xl space-y-4 font-serif text-base md:text-lg leading-relaxed font-bold"
                 style={{ color: "#4A4A3A" }}
               >
                 <p>
@@ -244,12 +245,12 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="mt-10 italic text-2xl md:text-3xl"
+                className="mt-10 italic text-2xl md:text-3xl font-bold"
                 style={{ color: "#5B6142" }}
               >
                 “He has made everything beautiful in its time.”
               </motion.p>
-              <p className="mt-2 text-[0.7rem] tracking-[0.4em] uppercase" style={{ color: "#7A7A6A" }}>
+              <p className="mt-2 font-bold text-[0.7rem] tracking-[0.4em] uppercase" style={{ color: "#7A7A6A" }}>
                 Ecclesiastes 3:11
               </p>
 
@@ -269,34 +270,38 @@ function Home() {
               <img
                 src={lightsAsset}
                 alt="Floral decoration"
-                className="w-full  object-contain"
+                className="w-full  object-contain mb-10"
               />
             </div>
 
             <SectionHeading eyebrow="6 · Feb · 2027" title="Schedule of the Day" />
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+
+            {/* Vertical timeline */}
+            <div className="relative mx-auto max-w-sm">
+
               {[
-                { time: "10:00", label: "Ceremony" },
-                { time: "12:00", label: "Canapés" },
-                { time: "13:00", label: "Reception" },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="border border-border bg-card/50 px-6 py-10 text-center"
-                >
-                  <p className="font-display text-5xl italic text-gold">{s.time}</p>
-                  <div className="gold-line mx-auto my-4 w-12" />
-                  <p className="text-xs tracking-[0.35em] uppercase text-muted-foreground">
+                { time: "11:00", label: "Ceremony",             desc: "The most special moment of the day" },
+                { time: "13:00", label: "Canapés & Drinks",     desc: "Reception and welcome cocktails" },
+                { time: "14:30", label: "Reception",    desc: "Al fresco dining and celebration" },
+                // { time: "18:00", label: "Party",                desc: "Let's dance the night away!" },
+                // { time: "22:00", label: "Last Dance",           desc: "Farewell and beautiful memories" },
+              ].map((s, i, arr) => (
+                <div key={s.label} className="flex flex-col items-center text-center">
+                  <p className="text-[0.65rem] tracking-[0.4em] uppercase mb-1" style={{ color: "var(--gold)" }}>
+                    {s.time}
+                  </p>
+                  <p className="font-display text-2xl italic mb-1" style={{ color: "var(--foreground)" }}>
                     {s.label}
                   </p>
-                  
+                  <p className="text-sm text-muted-foreground max-w-[18rem]">
+                    {s.desc}
+                  </p>
+                  {i < arr.length - 1 && (
+                    <div className="my-6 w-px h-10" style={{ background: "linear-gradient(to bottom, var(--gold), transparent)" }} />
+                  )}
                 </div>
-                    
               ))}
             </div>
-            <p className="mt-8 text-center text-sm italic text-muted-foreground">
-              An intentional celebration — no end times will be shared.
-            </p>
 
             {/* Flowers image */}
             <div className="mt-5 flex justify-center">
@@ -309,7 +314,7 @@ function Home() {
           </section>
 
           {/* LOCATION */}
-          <section className="mx-auto max-w-4xl px-6 py-24">
+          <section className="mx-auto max-w-4xl px-6 py-8">
             <SectionHeading eyebrow="The Venue" title="Where We Gather" />
             <div className="relative mx-auto flex aspect-[4/5] w-full max-w-md items-center justify-center sm:max-w-lg">
               <img
@@ -317,17 +322,17 @@ function Home() {
                 alt="Ornate venue badge"
                 className="absolute inset-0 h-full w-full object-contain"
               />
-              <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-16 text-center">
+              <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-6 text-center">
                 <p className="text-[0.65rem] tracking-[0.5em] uppercase text-gold">Location</p>
                 <div className="gold-line mx-auto my-4 w-16" />
                 <p className="script text-4xl md:text-5xl text-wax leading-tight">
-                  Golden Conifer
+                  Pabani Venue
                 </p>
                 <p className="mt-3 font-serif text-base md:text-lg italic text-foreground/75">
-                  Functions Venue
+                  25 Highland Glen Road, Helensvale
                 </p>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Golden+Conifer+Functions+Venue"
+                  href="https://www.bing.com/ck/a?!&&p=2968c502f1d7e33b265806da5687e8cf3e81047fe5dd512b8b8c06c6cbb31026JmltdHM9MTc4NDQxOTIwMA&ptn=3&ver=2&hsh=4&fclid=2b0fa93d-d477-6894-05db-beabd0776a88&u=a1L21hcHM_Jm1lcGk9MH5-RW1iZWRkZWR-QWRkcmVzc19MaW5rJnR5PTE4JnE9UGFiYW5pJTIwVmVudWUmc3M9eXBpZC5ZTkM3NTkzODc5OENGQjkyMDEmcHBvaXM9LTE3LjczMDQyMTA2NjI4NDE4XzMxLjE3NTU4ODYwNzc4ODA4Nl9QYWJhbmklMjBWZW51ZV9ZTkM3NTkzODc5OENGQjkyMDF-JmNwPS0xNy43MzA0MjF-MzEuMTc1NTg5JnY9MiZzVj0xJkZPUk09TVBTUlBM"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 inline-flex items-center gap-2 border border-gold bg-background/60 px-5 py-2.5 text-[0.65rem] tracking-[0.35em] uppercase text-foreground transition-colors hover:bg-gold hover:text-ivory"
@@ -340,7 +345,7 @@ function Home() {
           </section>
 
           {/* DRESS CODE */}
-          <section className="bg-secondary/40 py-24">
+          <section className="py-8">
             <div className="mx-auto max-w-4xl px-6">
               <SectionHeading eyebrow="Attire" title="Formal Elegance" />
               <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -399,14 +404,14 @@ function Home() {
           </section>
 
           {/* RSVP */}
-          <section className="bg-secondary/40 py-24">
+          <section className="py-24">
             <div className="mx-auto max-w-3xl px-6">
               <SectionHeading eyebrow="Kindly Respond" title="RSVP" />
               <p className="mb-4 text-center font-serif text-lg text-foreground/80">
                 Please confirm your attendance by{" "}
                 <span className="text-gold">30th October</span>.
               </p>
-              <p className="mb-12 text-center text-sm italic text-muted-foreground">
+              <p className="mb-8 text-center text-sm italic text-muted-foreground">
                 Each invitation includes named guests. Where a plus-one is included, this will be
                 indicated on your invitation.
               </p>
@@ -415,7 +420,14 @@ function Home() {
           </section>
 
           {/* GIFTS */}
-          <section className="mx-auto max-w-3xl px-6 py-24 text-center">
+          <section className="mx-auto max-w-3xl px-6 py-12 text-center">
+            <div className="flex justify-center">
+              <img
+                src={giftsAsset}
+                alt="Gift Assets"
+                className="w-full max-w-md object-contain"
+              />
+            </div>
             <SectionHeading eyebrow="With Gratitude" title="Gifts" />
             <p className="font-serif text-lg italic text-foreground/80">
               Should you wish to honour us with a gift, we are truly grateful for any gesture of
@@ -424,7 +436,7 @@ function Home() {
           </section>
 
           {/* DIETARY */}
-          <section className="bg-secondary/40 py-16">
+          {/* <section className="bg-secondary/40 py-16">
             <div className="mx-auto max-w-3xl px-6 text-center">
               <p className="script text-3xl text-wax">A gentle note on dietary needs</p>
               <div className="gold-line mx-auto my-4 w-16" />
@@ -432,7 +444,7 @@ function Home() {
                 Please share any dietary requirements or allergies when completing your RSVP form.
               </p>
             </div>
-          </section>
+          </section> */}
 
           {/* FAQ */}
           <section className="mx-auto max-w-3xl px-6 py-24">
