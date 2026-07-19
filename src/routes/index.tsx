@@ -179,7 +179,7 @@ function Home() {
               })}
             </div> */}
 
-            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-70 pt-32 text-center text-foreground">
+            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-20 pt-90 text-center text-foreground">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -314,7 +314,7 @@ function Home() {
           </section>
 
           {/* LOCATION */}
-          <section className="mx-auto max-w-4xl px-6 py-8">
+          <section className="mx-auto align-center text-center max-w-4xl px-6 ">
             <SectionHeading eyebrow="The Venue" title="Where We Gather" />
             <div className="relative mx-auto flex aspect-[4/5] w-full max-w-md items-center justify-center sm:max-w-lg">
               <img
@@ -331,17 +331,19 @@ function Home() {
                 <p className="mt-3 font-serif text-base md:text-lg italic text-foreground/75">
                   25 Highland Glen Road, Helensvale
                 </p>
-                <a
+                
+              </div>
+              
+            </div>
+            <a
                   href="https://www.bing.com/ck/a?!&&p=2968c502f1d7e33b265806da5687e8cf3e81047fe5dd512b8b8c06c6cbb31026JmltdHM9MTc4NDQxOTIwMA&ptn=3&ver=2&hsh=4&fclid=2b0fa93d-d477-6894-05db-beabd0776a88&u=a1L21hcHM_Jm1lcGk9MH5-RW1iZWRkZWR-QWRkcmVzc19MaW5rJnR5PTE4JnE9UGFiYW5pJTIwVmVudWUmc3M9eXBpZC5ZTkM3NTkzODc5OENGQjkyMDEmcHBvaXM9LTE3LjczMDQyMTA2NjI4NDE4XzMxLjE3NTU4ODYwNzc4ODA4Nl9QYWJhbmklMjBWZW51ZV9ZTkM3NTkzODc5OENGQjkyMDF-JmNwPS0xNy43MzA0MjF-MzEuMTc1NTg5JnY9MiZzVj0xJkZPUk09TVBTUlBM"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 border border-gold bg-background/60 px-5 py-2.5 text-[0.65rem] tracking-[0.35em] uppercase text-foreground transition-colors hover:bg-gold hover:text-ivory"
+                  className="mt-3 mx-auto inline-flex items-center gap-2 border border-gold bg-background/60 px-5 py-2.5 text-[0.65rem] tracking-[0.35em] uppercase text-foreground transition-colors hover:bg-gold hover:text-ivory"
                 >
                   <MapPin className="h-3.5 w-3.5" />
                   Open in Maps
                 </a>
-              </div>
-            </div>
           </section>
 
           {/* DRESS CODE */}
