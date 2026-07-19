@@ -259,8 +259,8 @@ function Home() {
           </section>
 
           {/* SCHEDULE */}
-          <section className="mx-auto max-w-4xl px-6 py-24">
-             <div className="mt-14 w-full align-center text-center mb-5">
+          <section className="mx-auto max-w-4xl px-6 py-8">
+             <div className="mt-8 w-full align-center text-center mb-5">
                 <p className="mb-6 text-[0.7rem] tracking-[0.5em] uppercase text-gold-hard">
                   Counting the days
                 </p>
@@ -281,8 +281,8 @@ function Home() {
 
               {[
                 { time: "11:00", label: "Ceremony",             desc: "The most special moment of the day" },
-                { time: "13:00", label: "Canapés & Drinks",     desc: "Reception and welcome cocktails" },
-                { time: "14:30", label: "Reception",    desc: "Al fresco dining and celebration" },
+                { time: "13:00", label: "Canapés & Drinks",     desc: "welcome cocktails" },
+                { time: "14:30", label: "Wedding Reception",    desc: "Al fresco dining and celebration" },
                 // { time: "18:00", label: "Party",                desc: "Let's dance the night away!" },
                 // { time: "22:00", label: "Last Dance",           desc: "Farewell and beautiful memories" },
               ].map((s, i, arr) => (
@@ -431,8 +431,20 @@ function Home() {
             <SectionHeading eyebrow="With Gratitude" title="Gifts" />
             <p className="font-serif text-lg italic text-foreground/80">
               Should you wish to honour us with a gift, we are truly grateful for any gesture of
-              love and kindness. Details will be provided upon request on the day.
+              love and kindness. For those who wishing to do so, gift details are provided below.
             </p>
+            <Accordion type="single" collapsible className="mt-8 w-full max-w-sm mx-auto text-left">
+              <AccordionItem value="bank-details" className="border-border">
+                <AccordionTrigger className="font-serif text-lg italic hover:text-gold hover:no-underline">
+                  Bank Details
+                </AccordionTrigger>
+                <AccordionContent className="font-serif bg-white rounded-lg  text-base text-foreground/80 space-y-1">
+                  <p><span className="text-gold ml-2">Bank Name:</span> Revolut</p>
+                  <p><span className="text-gold ml-2">Sort Code:</span> 23-01-20</p>
+                  <p><span className="text-gold ml-2">Account:</span> 53661849</p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </section>
 
           {/* DIETARY */}
