@@ -10,7 +10,11 @@ import HomeVideo from "@/assets/HOME.mp4";
 import dressCode from "@/assets/dress-code.png";
 import flowersAsset from "@/assets/flowers.png";
 import giftsAsset from '@/assets/envelope5.png'
-import photobookAsset from "@/assets/wedding-photos.png"
+import cc01 from "@/assets/cc01.JPG"
+import cc02 from "@/assets/cc02.jpg"
+import cc03 from "@/assets/cc03.jpg"
+import cc04 from "@/assets/cc04.jpg"
+import cc05 from "@/assets/cc05.jpg"
 import badgeAsset from "@/assets/Ornate venue badge.png";
 import { MapPin } from "lucide-react";
 import {
@@ -389,19 +393,28 @@ function Home() {
           </section>
 
           {/* PHOTOGRAPHS */}
-          <section className="mx-auto max-w-3xl px-6 py-24 text-center">
+          <section className="mx-auto max-w-4xl px-6 py-24 text-center">
             <SectionHeading eyebrow="Memories" title="Couple Photographs" />
-            <p className="font-serif text-lg italic text-foreground/80">
-              We would be delighted to capture memories with our loved ones. Further details will
-              be shared on the day.
-            </p>
-             {/* photobook image */}
-            <div className="mt-10 flex justify-center">
-              <img
-                src={photobookAsset}
-                alt="Photo Book"
-                className="w-full max-w-md object-contain"
-              />
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
+              {[cc01, cc02, cc03, cc04, cc05].map((src, i) => (
+                <div
+                  key={i}
+                  className={[i === 3 ? "md:col-start-1" : "", i === 4 ? "md:col-start-2" : ""].join(" ").trim()}
+                  style={{
+                    padding: "10px",
+                    background: "linear-gradient(135deg, #c9a84c 0%, #f5e6a3 40%, #c9a84c 60%, #8b6914 100%)",
+                    boxShadow: "0 4px 24px rgba(180,140,40,0.2), inset 0 0 0 2px rgba(255,235,150,0.3)",
+                  }}
+                >
+                  <div style={{ border: "1px solid rgba(201,168,76,0.5)", padding: "3px" }}>
+                    <img
+                      src={src}
+                      alt={"Calvin and Querida " + (i + 1)}
+                      className="w-full h-64 object-cover object-top"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
