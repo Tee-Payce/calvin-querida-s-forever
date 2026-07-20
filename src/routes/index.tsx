@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { Envelope } from "@/components/Envelope";
@@ -6,6 +6,7 @@ import { Countdown } from "@/components/Countdown";
 import { RsvpForm } from "@/components/RsvpForm";
 import { createFileRoute } from "@tanstack/react-router";
 import lightsAsset from '@/assets/string-lights.png'
+import bgMusic from '@/assets/background_music.mp3'
 import HomeVideo from "@/assets/HOME.mp4";
 import dressCode from "@/assets/dress-code.png";
 import flowersAsset from "@/assets/flowers.png";
@@ -42,10 +43,40 @@ function SectionHeading({ eyebrow, title }: { eyebrow?: string; title: string })
 }
 function Home() {
   const [phase, setPhase] = useState<"loading" | "envelope" | "site">("loading");
+  const [playing, setPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (playing) { audio.play(); } else { audio.pause(); }
+  }, [playing]);
+
 
   return (
     <>
       <Toaster position="top-center" />
+
+      <audio ref={audioRef} src={bgMusic} loop />
+
+      {/* Music toggle — fixed bottom right */}
+      <button
+        onClick={() => setPlaying(p => !p)}
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-gold bg-background/80 backdrop-blur-sm shadow-lg transition-all hover:bg-gold hover:text-ivory"
+        aria-label={playing ? "Pause music" : "Play music"}
+        style={{ color: "var(--gold)" }}
+      >
+        {playing ? (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="5" y="4" width="4" height="16" rx="1" />
+            <rect x="15" y="4" width="4" height="16" rx="1" />
+          </svg>
+        ) : (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 4l14 8-14 8V4z" />
+          </svg>
+        )}
+      </button>
 
       {/* Phase 1 — loading screen */}
       <AnimatePresence>
@@ -393,8 +424,8 @@ function Home() {
           </section>
 
           {/* PHOTOGRAPHS */}
-          <section className="mx-auto max-w-4xl px-6 py-24 text-center">
-            <SectionHeading eyebrow="Memories" title="Couple Photographs" />
+          <section className="mx-auto max-w-4xl px-6 py-8 text-center">
+            <SectionHeading eyebrow="Memories" title="Our Forever Begins Now" />
             <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
               {[cc01, cc02, cc03, cc04, cc05].map((src, i) => (
                 <div
@@ -419,14 +450,14 @@ function Home() {
           </section>
 
           {/* RSVP */}
-          <section className="py-24">
+          <section className="py-12">
             <div className="mx-auto max-w-3xl px-6">
               <SectionHeading eyebrow="Kindly Respond" title="RSVP" />
               <p className="mb-4 text-center font-serif text-lg text-foreground/80">
                 Please confirm your attendance by{" "}
                 <span className="text-gold">30th October</span>.
               </p>
-              <p className="mb-8 text-center text-sm italic text-muted-foreground">
+              <p className="mb-4 text-center text-sm italic text-muted-foreground">
                 Each invitation includes named guests. Where a plus-one is included, this will be
                 indicated on your invitation.
               </p>
@@ -463,15 +494,15 @@ function Home() {
           </section>
 
           {/* DIETARY */}
-          {/* <section className="bg-secondary/40 py-16">
+          <section className="py-8">
             <div className="mx-auto max-w-3xl px-6 text-center">
-              <p className="script text-3xl text-wax">A gentle note on dietary needs</p>
+              <p className="italic text-3xl text-wax">Our Message to You</p>
               <div className="gold-line mx-auto my-4 w-16" />
               <p className="font-serif italic text-foreground/80">
-                Please share any dietary requirements or allergies when completing your RSVP form.
+Your love, support, and presence mean the world to us, and we can't wait to celebrate our special day with you!
               </p>
             </div>
-          </section> */}
+          </section>
 
           {/* FAQ */}
           <section className="mx-auto max-w-3xl px-6 py-24">
