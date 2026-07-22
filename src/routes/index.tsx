@@ -215,7 +215,7 @@ function Home() {
               })}
             </div> */}
 
-            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-80 pt-50 text-center text-foreground">
+            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-50 pt-50 text-center text-foreground">
               {/* <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
