@@ -275,7 +275,7 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="mt-1 italic text-xl md:text-xl font-bold"
+                className="mt-1 italic text-xl md:text-sm font-bold"
                 style={{ color: "#5B6142" }}
               >
                 “He has made everything beautiful in its time.”
