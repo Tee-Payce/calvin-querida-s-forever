@@ -248,7 +248,7 @@ function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4, duration: 1 }}
                 className="max-w-2xl font-serif text-sm md:text-sm font-bold italic"
-                style={{ color: "#4A4A3A", marginTop: 5 }}
+                style={{ color: "#4A4A3A", marginTop: 2 }}
               >
                 Our Love Story
               </motion.p>
