@@ -276,7 +276,7 @@ function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
                 className="mt-1 italic text-xl md:text-sm font-bold"
-                style={{ color: "#5B6142" }}
+                style={{ color: "#f4e560ff" }}
               >
                 “He has made everything beautiful in its time.”
               </motion.p>
