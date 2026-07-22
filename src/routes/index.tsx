@@ -267,8 +267,7 @@ function Home() {
                   our lives. </p>
                 <p>
                   With grateful hearts, we invite you to celebrate the beginning of our forever.
-                  Please join us on <span style={{ color: "#5B6142" }}>6th February 2027</span> as we
-                  say <em>I do</em>, and celebrate this special day with our family and friends.
+                  
                 </p>
               </motion.div>
 
