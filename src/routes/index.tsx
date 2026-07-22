@@ -215,7 +215,7 @@ function Home() {
               })}
             </div> */}
 
-            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-50 pt-50 text-center text-foreground">
+            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-30 pt-50 text-center text-foreground">
               {/* <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -230,7 +230,7 @@ function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1.2 }}
-                className="mt-1 italic text-6xl md:text-8xl"
+                className="mt-1 italic text-6xl md:text-4xl"
                 style={{ lineHeight: 1, color: "#3B3A2E" }}
               >
                 Calvin <span style={{ color: "#5B6142" }}>&</span> Querida
