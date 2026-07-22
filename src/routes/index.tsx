@@ -352,7 +352,7 @@ function Home() {
                 alt="Ornate venue badge"
                 className="absolute inset-0 h-full w-full object-contain"
               />
-              <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-6 text-center">
+              <div className="relative z-10 flex h-full w-full flex-col items-center justify-top px-2 pt-50 text-center">
                 <p className="text-[0.65rem] tracking-[0.5em] uppercase text-gold">Location</p>
                 <div className="gold-line mx-auto my-4 w-16" />
                 <p className="script text-4xl md:text-3xl text-wax leading-tight">
