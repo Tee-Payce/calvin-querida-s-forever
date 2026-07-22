@@ -230,7 +230,7 @@ function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1.2 }}
-                className="mt-1 italic text-lg md:text-sm"
+                className="mt-1 italic text-lg md:text-lg"
                 style={{ lineHeight: 1, color: "#3B3A2E" }}
               >
                 Calvin <span style={{ color: "#5B6142" }}>&</span> Querida
@@ -247,7 +247,7 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4, duration: 1 }}
-                className="max-w-2xl font-serif text-lg md:text-xl font-bold italic"
+                className="max-w-2xl font-serif text-sm md:text-sm font-bold italic"
                 style={{ color: "#4A4A3A", marginTop: 5 }}
               >
                 Our Love Story
