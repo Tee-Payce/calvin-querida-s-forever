@@ -16,6 +16,7 @@ import cc02 from "@/assets/cc02.jpg"
 import cc03 from "@/assets/cc03.jpg"
 import cc04 from "@/assets/cc04.jpg"
 import cc05 from "@/assets/cc05.jpg"
+import cc06 from "@/assets/cc06.png"
 import badgeAsset from "@/assets/Ornate venue badge.png";
 import { MapPin } from "lucide-react";
 import {
@@ -214,8 +215,8 @@ function Home() {
               })}
             </div> */}
 
-            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-20 pt-90 text-center text-foreground">
-              <motion.p
+            <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-end px-6 pb-80 pt-50 text-center text-foreground">
+              {/* <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
@@ -223,13 +224,13 @@ function Home() {
                 style={{color: '#3B3A2E'}}
               >
                 Together with their families
-              </motion.p>
+              </motion.p> */}
 
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1.2 }}
-                className="mt-4 italic text-6xl md:text-8xl"
+                className="mt-1 italic text-6xl md:text-8xl"
                 style={{ lineHeight: 1, color: "#3B3A2E" }}
               >
                 Calvin <span style={{ color: "#5B6142" }}>&</span> Querida
@@ -239,7 +240,7 @@ function Home() {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 1.2, duration: 1 }}
-                className="gold-line my-8 w-40"
+                className="gold-line my-4 w-40"
               />
 
               <motion.p
@@ -247,7 +248,7 @@ function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4, duration: 1 }}
                 className="max-w-2xl font-serif text-lg md:text-xl font-bold italic"
-                style={{ color: "#4A4A3A", marginTop: 10 }}
+                style={{ color: "#4A4A3A", marginTop: 5 }}
               >
                 Our Love Story
               </motion.p>
@@ -260,15 +261,10 @@ function Home() {
                 style={{ color: "#4A4A3A" }}
               >
                 <p>
-                  Many years ago, our paths first crossed, and we quickly grew fond of one another.
-                  Although our journey did not continue then, God was still writing our story.
-                </p>
-                <p>
-                  In His perfect timing and divine alignment, He brought us back together during a
-                  season when we were both seeking Him and praying for the person we would spend
-                  the rest of our lives with. Looking back now, we know this was all part of His
-                  perfect plan.
-                </p>
+                  Many years ago, our paths first crossed, and though our journey paused, God was still writing our story.
+                
+                  In His perfect timing, He brought us back togetheras we sought him and prayed for the person we would spend
+                  our lives. </p>
                 <p>
                   With grateful hearts, we invite you to celebrate the beginning of our forever.
                   Please join us on <span style={{ color: "#5B6142" }}>6th February 2027</span> as we
@@ -280,12 +276,12 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="mt-10 italic text-2xl md:text-3xl font-bold"
+                className="mt-2 italic text-2xl md:text-3xl font-bold"
                 style={{ color: "#5B6142" }}
               >
                 “He has made everything beautiful in its time.”
               </motion.p>
-              <p className="mt-2 font-bold text-[0.7rem] tracking-[0.4em] uppercase" style={{ color: "#7A7A6A" }}>
+              <p className="mt-1 font-bold text-[0.7rem] tracking-[0.4em] uppercase" style={{ color: "#7A7A6A" }}>
                 Ecclesiastes 3:11
               </p>
 
@@ -316,7 +312,7 @@ function Home() {
 
               {[
                 { time: "11:00", label: "Ceremony",             desc: "The most special moment of the day" },
-                { time: "13:00", label: "Canapés & Drinks",     desc: "welcome cocktails" },
+                { time: "13:00", label: "Canapés & Drinks",     desc: "welcome mocktails" },
                 { time: "14:30", label: "Wedding Reception",    desc: "Al fresco dining and celebration" },
                 // { time: "18:00", label: "Party",                desc: "Let's dance the night away!" },
                 // { time: "22:00", label: "Last Dance",           desc: "Farewell and beautiful memories" },
@@ -360,10 +356,10 @@ function Home() {
               <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-6 text-center">
                 <p className="text-[0.65rem] tracking-[0.5em] uppercase text-gold">Location</p>
                 <div className="gold-line mx-auto my-4 w-16" />
-                <p className="script text-4xl md:text-5xl text-wax leading-tight">
+                <p className="script text-4xl md:text-3xl text-wax leading-tight">
                   Pabani Venue
                 </p>
-                <p className="mt-3 font-serif text-base md:text-lg italic text-foreground/75">
+                <p className="mt-1 font-serif text-base md:text-lg italic text-foreground/75">
                   25 Highland Glen Road, Helensvale
                 </p>
                 
@@ -427,7 +423,7 @@ function Home() {
           <section className="mx-auto max-w-4xl px-6 py-8 text-center">
             <SectionHeading eyebrow="Memories" title="Our Forever Begins Now" />
             <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
-              {[cc01, cc02, cc03, cc04, cc05].map((src, i) => (
+              {[cc01, cc02, cc03, cc05, cc04, cc06].map((src, i) => (
                 <div
                   key={i}
                   className={[i === 3 ? "md:col-start-1" : "", i === 4 ? "md:col-start-2" : ""].join(" ").trim()}
@@ -558,12 +554,12 @@ Your love, support, and presence mean the world to us, and we can't wait to cele
           <footer className="border-t border-border bg-foreground py-16 text-center text-primary-foreground">
             <p className="italic text-5xl text-gold-soft">Calvin & Querida</p>
             <div className="gold-line mx-auto my-5 w-24" />
-            <p className="text-xs tracking-[0.5em] uppercase text-primary-foreground/70">
+            <p className="text-xs tracking-[0.5em] uppercase px-8 text-primary-foreground/70">
               Six · February · Two Thousand & Twenty-Seven
             </p>
-            <p className="mt-8 text-xs tracking-[0.3em] uppercase text-primary-foreground/50">
+            {/* <p className="mt-8 text-xs tracking-[0.3em] uppercase text-primary-foreground/50">
               With love, and by God's grace
-            </p>
+            </p> */}
           </footer>
         </motion.main>
       )}
