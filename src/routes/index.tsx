@@ -230,7 +230,7 @@ function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1.2 }}
-                className="mt-1 italic text-6xl md:text-4xl"
+                className="mt-1 italic text-lg md:text-sm"
                 style={{ lineHeight: 1, color: "#3B3A2E" }}
               >
                 Calvin <span style={{ color: "#5B6142" }}>&</span> Querida
@@ -275,8 +275,8 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="mt-1 italic text-xl md:text-sm font-bold"
-                style={{ color: "#f4e560ff" }}
+                className="mt-1 italic text-sm md:text-sm font-bold"
+                style={{ color: "#beb66cff" }}
               >
                 “He has made everything beautiful in its time.”
               </motion.p>
