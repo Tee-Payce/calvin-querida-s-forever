@@ -257,7 +257,7 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.6, duration: 1 }}
-                className="mt-6 max-w-2xl space-y-4 font-serif text-base md:text-sm leading-relaxed font-bold"
+                className="mt-2 max-w-2xl space-y-4 font-serif text-base md:text-sm leading-relaxed font-bold"
                 style={{ color: "#4A4A3A" }}
               >
                 <p>
