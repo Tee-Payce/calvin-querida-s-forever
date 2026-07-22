@@ -4,6 +4,7 @@ import { LoadingScreen } from "@/components/LoadingScreen";
 import { Envelope } from "@/components/Envelope";
 import { Countdown } from "@/components/Countdown";
 import { RsvpForm } from "@/components/RsvpForm";
+import { MusicPlayer } from "@/components/MusicPlayer";
 import { createFileRoute } from "@tanstack/react-router";
 import lightsAsset from '@/assets/string-lights.png'
 import bgMusic from '@/assets/background_music.mp3'
@@ -95,8 +96,10 @@ function Home() {
 
       {/* Phase 3 — main site */}
       {phase === "site" && (
-        <motion.main
-          initial={{ opacity: 0, y: 20 }}
+        <>
+          <MusicPlayer autoPlay />
+          <motion.main
+            initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="min-h-screen bg-background text-foreground"
@@ -327,7 +330,7 @@ function Home() {
                     {s.desc}
                   </p>
                   {i < arr.length - 1 && (
-                    <div className="my-6 w-px h-10" style={{ background: "linear-gradient(to bottom, var(--gold), transparent)" }} />
+                    <div className="gold-line my-6 w-16" />
                   )}
                 </div>
               ))}
@@ -561,6 +564,7 @@ Your love, support, and presence mean the world to us, and we can't wait to cele
             </p> */}
           </footer>
         </motion.main>
+        </>
       )}
     </>
   );
