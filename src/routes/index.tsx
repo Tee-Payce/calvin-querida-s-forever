@@ -330,7 +330,12 @@ function Home() {
                     {s.desc}
                   </p>
                   {i < arr.length - 1 && (
-                    <div className="gold-line my-6 w-16" />
+                    <div className="flex flex-col items-center my-2">
+                      {/* Short vertical spine segment between items */}
+                      <div className="w-px h-8" style={{ background: "linear-gradient(to bottom, var(--gold), color-mix(in oklab, var(--gold) 30%, transparent))" }} />
+                      {/* <div className="gold-line w-12" /> */}
+                      <div className="w-px h-8" style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--gold) 30%, transparent), var(--gold))" }} />
+                    </div>
                   )}
                 </div>
               ))}
@@ -355,10 +360,10 @@ function Home() {
                 alt="Ornate venue badge"
                 className="absolute inset-0 h-full w-full object-contain"
               />
-              <div className="relative z-10 flex h-full w-full flex-col items-center justify-top px-2 pt-50 text-center">
+              <div className="relative z-10 flex h-full w-full flex-col items-center justify-top px-2 pt-20 text-center">
                 <p className="text-[0.65rem] tracking-[0.5em] uppercase text-gold">Location</p>
                 <div className="gold-line mx-auto my-4 w-16" />
-                <p className="script text-4xl md:text-3xl text-wax leading-tight">
+                <p className="script text-xl md:text-xl text-wax leading-tight">
                   Pabani Venue
                 </p>
                 <p className="mt-1 font-serif text-base md:text-lg italic text-foreground/75">
