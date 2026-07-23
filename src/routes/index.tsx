@@ -7,7 +7,7 @@ import { RsvpForm } from "@/components/RsvpForm";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { createFileRoute } from "@tanstack/react-router";
 import lightsAsset from '@/assets/string-lights.png'
-import bgMusic from '@/assets/background_music.mp3'
+import bgMusic from '@/assets/background_music2.mp3'
 import HomeVideo from "@/assets/HOME.mp4";
 import dressCode from "@/assets/dress-code.png";
 import flowersAsset from "@/assets/flowers.png";
@@ -17,7 +17,7 @@ import cc02 from "@/assets/cc02.jpg"
 import cc03 from "@/assets/cc03.jpg"
 import cc04 from "@/assets/cc04.jpg"
 import cc05 from "@/assets/cc05.jpg"
-import cc06 from "@/assets/cc06.png"
+import cc06 from "@/assets/cc06.JPG"
 import badgeAsset from "@/assets/Ornate venue badge.png";
 import { MapPin } from "lucide-react";
 import {
@@ -491,6 +491,7 @@ function Home() {
                   <p><span className="text-gold ml-2">Bank Name:</span> Revolut</p>
                   <p><span className="text-gold ml-2">Sort Code:</span> 23-01-20</p>
                   <p><span className="text-gold ml-2">Account:</span> 53661849</p>
+                  <p><span className="text-gold ml-2">Owner:</span> Querida Kuzamba</p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -542,7 +543,7 @@ Your love, support, and presence mean the world to us, and we can't wait to cele
                 },
                 {
                   q: "Who can I contact for questions?",
-                  a: "Querida on +44 7496 296 808 or Calvin on +263 0783 746 903.",
+                  a: "Querida on +44 7496 296 808 or Calvin on +263 0783 746 903. Sharon on +44 749629808 and Natalie on +263 77 271 9986",
                 },
               ].map((item, i) => (
                 <AccordionItem key={i} value={`item-${i}`} className="border-border">

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import music from "@/assets/background_music.mp3";
+import music from "@/assets/background_music2.mp3";
 
 interface MusicPlayerProps {
   /** Call this from the parent once the envelope has finished */
