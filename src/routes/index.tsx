@@ -269,7 +269,7 @@ function Home() {
                 <p>
                   Many years ago, our paths first crossed, and though our journey paused, God was still writing our story.
                 
-                  In His perfect timing, He brought us back togetheras we sought him and prayed for the person we would spend
+                  In His perfect timing, He brought us back together as we sought him and prayed for the person we would spend
                   our lives. </p>
                 <p>
                   With grateful hearts, we invite you to celebrate the beginning of our forever.
@@ -366,11 +366,14 @@ function Home() {
               <div className="relative z-10 flex h-full w-full flex-col items-center justify-top px-2 pt-30 text-center">
                 <p className="text-[0.65rem] tracking-[0.5em] uppercase text-gold">Location</p>
                 <div className="gold-line mx-auto my-4 w-16" />
-                <p className="script text-xl md:text-xl text-wax leading-tight">
+                <p className="italic text-xl md:text-xl text-wax leading-tight">
                   Pabani Venue
                 </p>
                 <p className="mt-1 font-serif text-base md:text-lg italic text-foreground/75">
                   25 Highland Glen Road, Helensvale
+                </p>
+                <p className="mt-1 font-serif text-base md:text-lg italic text-foreground/75">
+                  Harare, Zimbabwe
                 </p>
                 
               </div>
@@ -546,7 +549,7 @@ Your love, support, and presence mean the world to us, and we can't wait to cele
                 },
                 {
                   q: "Who can I contact for questions?",
-                  a: "Querida on +44 7496 296 808 or Calvin on +263 0783 746 903. Sharon on +44 749629808 and Natalie on +263 77 271 9986",
+                  a: "Querida on +44 7496 296 808 or Calvin on +263 0783 746 903. Sharon on +44 750 751 7649 and Natalie on +263 77 271 9986",
                 },
               ].map((item, i) => (
                 <AccordionItem key={i} value={`item-${i}`} className="border-border">
