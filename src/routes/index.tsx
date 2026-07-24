@@ -27,6 +27,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
+import FloatingCupid from "@/components/FloatingCupid";
+
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -57,6 +59,7 @@ function Home() {
 
   return (
     <>
+    <FloatingCupid/>
       <Toaster position="top-center" />
 
       <audio ref={audioRef} src={bgMusic} loop />
