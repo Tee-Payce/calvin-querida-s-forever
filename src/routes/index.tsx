@@ -277,7 +277,7 @@ function Home() {
                 </p>
               </motion.div>
 
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
@@ -285,7 +285,7 @@ function Home() {
                 style={{ color: "#beb66cff" }}
               >
                 “He has made everything beautiful in its time.”
-              </motion.p>
+              </motion.p> */}
               <p className="mt-1 font-bold text-[0.7rem] tracking-[0.4em] uppercase" style={{ color: "#7A7A6A" }}>
                 Ecclesiastes 3:11
               </p>
