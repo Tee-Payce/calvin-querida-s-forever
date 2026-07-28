@@ -71,7 +71,7 @@ export async function sendRsvpEmail(data: RsvpEmailData) {
 
   await transporter.sendMail({
     from:    `"Calvin & Querida RSVP" <${process.env.EMAIL_USER}>`,
-    to:      process.env.EMAIL_TO ?? "tkpat3@gmail.com",
+    to:      process.env.EMAIL_TO ?? "teepayce11@gmail.com",
     subject: `RSVP ${attending ? "✅ Accept" : "❌ Decline"} — ${data.fullName}`,
     html,
   });
